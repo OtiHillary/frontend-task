@@ -1,0 +1,112 @@
+{
+  "land": [
+    {
+      "id": 1,
+      "title": "Sky Ring",
+      "location": "Kochi",
+      "description": "Shoot up a sky-high tower for a bird's-eye view of Wonderla Kochi!",
+      "image": "https://images.unsplash.com/photo-1567449303078-57ad995bd1a2?w=400&h=300&fit=crop",
+      "category": "land"
+    },
+    {
+      "id": 2,
+      "title": "Recoil",
+      "location": "Bengaluru",
+      "description": "India's first-ever action-packed reverse looping roller coaster ride!",
+      "image": "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=400&h=300&fit=crop",
+      "category": "land"
+    },
+    {
+      "id": 3,
+      "title": "Mission Interstellar",
+      "location": "Hyderabad",
+      "description": "Blast through cosmic chaos on a wild, out-of-this-world space ride!",
+      "image": "https://images.unsplash.com/photo-1596906690771-d3dbaa6de116?w=400&h=300&fit=crop",
+      "category": "land"
+    },
+    {
+      "id": 4,
+      "title": "Equinox",
+      "location": "Bhubaneswar",
+      "description": "A thrill monster that flips you 360 degrees in a giant spinning wheel!",
+      "image": "https://images.unsplash.com/photo-1562958388-b9b0f5f8c2a1?w=400&h=300&fit=crop",
+      "category": "land"
+    },
+    {
+      "id": 5,
+      "title": "Flash Tower",
+      "location": "Bengaluru",
+      "description": "Experience the ultimate adrenaline rush as you plummet from great heights!",
+      "image": "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=400&h=300&fit=crop",
+      "category": "land"
+    },
+    {
+      "id": 6,
+      "title": "Maverick",
+      "location": "Kochi",
+      "description": "Dare to ride the most challenging roller coaster in South India!",
+      "image": "https://images.unsplash.com/photo-1567449303078-57ad995bd1a2?w=400&h=300&fit=crop",
+      "category": "land"
+    }
+  ],
+  "water": [
+    {
+      "id": 7,
+      "title": "Hurricane",
+      "location": "Bengaluru",
+      "description": "Get swept away by the massive waves in this thrilling water ride!",
+      "image": "https://images.unsplash.com/photo-1544737150-6f4b999de2a3?w=400&h=300&fit=crop",
+      "category": "water"
+    },
+    {
+      "id": 8,
+      "title": "Rain Disco",
+      "location": "Hyderabad",
+      "description": "Dance in the rain with pulsating music and colorful lights!",
+      "image": "https://images.unsplash.com/photo-1530549387789-4c1017266635?w=400&h=300&fit=crop",
+      "category": "water"
+    },
+    {
+      "id": 9,
+      "title": "Wave Pool",
+      "location": "Kochi",
+      "description": "Surf artificial waves in India's largest wave pool experience!",
+      "image": "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&h=300&fit=crop",
+      "category": "water"
+    },
+    {
+      "id": 10,
+      "title": "Aqua Dance",
+      "location": "Bhubaneswar",
+      "description": "Splash into fun with this interactive water playground!",
+      "image": "https://images.unsplash.com/photo-1530549387789-4c1017266635?w=400&h=300&fit=crop",
+      "category": "water"
+    }
+  ],
+  "kids": [
+    {
+      "id": 11,
+      "title": "Mini Train",
+      "location": "All Parks",
+      "description": "A delightful train ride perfect for young adventurers!",
+      "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+      "category": "kids"
+    },
+    {
+      "id": 12,
+      "title": "Kiddie Carousel",
+      "location": "All Parks",
+      "description": "Classic merry-go-round fun for the little ones!",
+      "image": "https://images.unsplash.com/photo-1520637836862-4d197d17c12a?w=400&h=300&fit=crop",
+      "category": "kids"
+    },
+    {
+      "id": 13,
+      "title": "Bumper Cars",
+      "location": "All Parks",
+      "description": "Safe and fun bumper car experience designed for kids!",
+      "image": "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=400&h=300&fit=crop",
+      "category": "kids"
+    }
+  ]
+}
