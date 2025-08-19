@@ -1,5 +1,4 @@
 import React from 'react';
-import { MapPin } from 'lucide-react';
 import { Ride } from '../types/rides';
 
 interface RideCardProps {
@@ -19,22 +18,25 @@ const RideCard: React.FC<RideCardProps> = ({ ride }) => {
         
 
 
-        {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-colors duration-300"></div>
+        {/* Dark gradient overlay for readability */}
+        <div
+          className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#262d4b] 
+                    group-hover:from-black/70 group-hover:via-black/50 group-hover:to-[#262d4b] 
+                    transition-colors duration-300">
+        </div>
 
         {/* Card Content */}
         <div className="relative p-[11px] z-10">
-            <div className="flex items-center text-sm text-gray-200 mb-2">
-            <MapPin className="w-4 h-4 mr-1" />
+            <div className="flex font-bold items-center text-lg text-gray-200">
             {ride.location}
             </div>
-            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-yellow-300 transition-colors duration-300">
+            <h3 className="text-xs mb-1.5 font-slim text-white group-hover:text-yellow-300 transition-colors duration-300">
             {ride.title}
             </h3>
-            <p className="text-gray-200 text-sm leading-relaxed mb-4">
+            <p className="text-gray-200 text-xs font-slim leading-relaxed mb-1">
             {ride.description}
             </p>
-            <button className="w-10/12 text-xs me-auto bg-yellow-300 text-blue-900 font-bold py-3 px-6 rounded-xl hover:bg-yellow-300 transition-all duration-300 hover:shadow-lg hover:scale-105">
+            <button className="w-9/12 text-xs me-auto bg-yellow-300 text-blue-900 font-extrabold py-2 px-5 rounded-xl hover:bg-yellow-300 transition-all duration-300 hover:shadow-lg hover:scale-105">
             RIDE DETAILS
             </button>
         </div>

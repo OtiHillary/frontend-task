@@ -1,12 +1,13 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { MapPin, Ticket, Calendar, Gift, Car, Utensils } from 'lucide-react';
+import { MapPin, Ticket, Calendar, Gift, Car, Utensils, FerrisWheel, Menu } from 'lucide-react';
 import ridesDataImport from './data/rides.json';
 import { RidesData, Category } from './types/rides';
 import CategorySidebar from './components/CategorySidebar';
 import CarouselControls from './components/CarouselControls';
 import RideCard from './components/RideCard';
+import Image from 'next/image';
 
 const ridesData = ridesDataImport as RidesData;
 
@@ -17,9 +18,9 @@ const RidesSection = () => {
   const [isAutoScrolling, setIsAutoScrolling] = useState(true);
 
   const categories: Category[] = [
-    { key: 'land', name: 'Land', count: ridesData.land.length },
-    { key: 'water', name: 'Water', count: ridesData.water.length },
-    { key: 'kids', name: 'Kids', count: ridesData.kids.length }
+    { key: 'land', name: 'Land', count: ridesData.land.length, image: '/ferris-removebg-preview.png' },
+    { key: 'water', name: 'Water', count: ridesData.water.length, image: '/waterslide-removebg-preview.png' },
+    { key: 'kids', name: 'Kids', count: ridesData.kids.length, image: '/horseride-removebg-preview.png' },
   ];
 
   const currentRides = ridesData[activeCategory];
@@ -68,46 +69,54 @@ const RidesSection = () => {
   return (
     <div className="min-h-screen bg-[#262d4b] pt-[2.5rem]">
       {/* Header Navigation */}
-      <div className="bg-white shadow-sm w-[87%] py-2 px-8 rounded-2xl mx-auto ">
+      <div className="bg-white shadow-sm w-[87%] px-6 rounded-2xl mx-auto ">
         <div className="mx-auto px-1 py-2">
           <div className="flex items-center justify-between">
             <div className="flex flex-col items-center">
-              <img
-                src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?w=40&h=40&fit=crop"
+              <Image
+                src="/wonderla.PNG"
                 alt="Wonderla Logo"
-                className="w-10 h-10 rounded-lg mr-3"
+                width={150}
+                height={10}
+                className="rounded-lg mr-2"
               />
             </div>
 
-            <nav className="hidden text-sm font-bold md:flex items-center space-x-8">
-              <div className="flex items-center text-gray-700 hover:text-purple-700 cursor-pointer">
+            <nav className="hidden text-xs font-extrabold md:flex items-center space-x-6">
+              <div className="flex items-center text-gray-500 hover:text-blue-900 cursor-pointer">
                 <MapPin className="w-4 h-4 mr-1" />
                 LOCATIONS
               </div>
-              <div className="flex items-center text-gray-700 hover:text-purple-700 cursor-pointer">
+              <div className="flex items-center text-gray-500 hover:text-blue-900 cursor-pointer">
                 <Gift className="w-4 h-4 mr-1" />
                 OFFERS
               </div>
-              <div className="flex items-center text-gray-700 hover:text-purple-700 cursor-pointer">
-                <Car className="w-4 h-4 mr-1" />
+              <div className="flex items-center text-gray-500 hover:text-blue-900 cursor-pointer">
+                <FerrisWheel className="w-4 h-4 mr-1" />
                 RIDES
               </div>
-              <div className="flex items-center text-gray-700 hover:text-purple-700 cursor-pointer">
+              <div className="flex items-center text-gray-500 hover:text-blue-900 cursor-pointer">
                 <Utensils className="w-4 h-4 mr-1" />
                 RESTAURANTS
               </div>
-              <div className="flex items-center text-gray-700 hover:text-purple-700 cursor-pointer">
+              <div className="flex items-center text-gray-500 hover:text-blue-900 cursor-pointer">
                 <Calendar className="w-4 h-4 mr-1" />
                 EVENTS
               </div>
 
             </nav>
 
+            <div className="flex items-center space-x-4">
+              <button className="text-sm text-blue-900 bg-yellow-300 font-extrabold px-4 py-2 rounded-lg hover:bg-yellow-500 transition-colors duration-300 flex items-center">
+                  BOOK TICKETS
+                  <Ticket className="w-6 h-4" />
+              </button>
 
-            <button className="text-sm text-blue-900 bg-yellow-300 font-bold px-6 py-2 rounded-lg hover:bg-yellow-500 transition-colors duration-300 flex items-center">
-                <Ticket className="w-4 h-4 mr-2" />
-                BOOK TICKETS
-            </button>
+              <button className="text-sm text-blue-900 font-extrabold px-6 py-2 rounded-lg">
+                  <Menu className='w-8 h-8 text-blue-900' />
+              </button>
+            </div>
+
           </div>
         </div>
       </div>
@@ -139,12 +148,12 @@ const RidesSection = () => {
               />
             </div>
 
-                        {/* Right Content - Rides Carousel */}
+            {/* Right Content - Rides Carousel */}
             <div className="flex flex-col overflow-hidden">
               <div
                 className="flex transition-transform duration-500 ease-in-out"
                 style={{
-                  transform: `translateX(-${currentIndex * (320 + 24)}px)` // 320px card width + 24px gap
+                  transform: `translateX(-${currentIndex * (240 + 24)}px)` // 240px card width + 24px gap
                 }}
               >
                 {currentRides.map((ride) => (
@@ -156,9 +165,9 @@ const RidesSection = () => {
             </div>
             
             {/* Explore All Rides Button */}
-            <div className="mt-12 text-center me-auto">
+            <div className="mt-12 text-start me-auto">
               <a
-                className="bg-yellow-300 text-blue-900 font-bold px-12 py-4 rounded-full text-lg hover:bg-yellow-400 transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                className="bg-yellow-300 text-blue-900 font-extrabold px-16 py-3 rounded-full text-xs hover:bg-yellow-400 transition-all duration-300 hover:scale-105 hover:shadow-xl"
               >
                 Explore All Rides!
               </a>

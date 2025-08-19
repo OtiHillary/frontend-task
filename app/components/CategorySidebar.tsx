@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Map, Camera, Gift } from "lucide-react";
+import Image from "next/image";
 import { Category } from "../types/rides";
 
 interface CategorySidebarProps {
@@ -21,20 +22,20 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({
 
   // Define angular positions for each category (degrees on circle)
   const angles: Record<"land" | "water" | "kids", number> = {
-    land: -33,   // top-right
+    land: -39,   // top-right
     water: 0,    // right-center
-    kids: 33,    // bottom-right
+    kids: 39,    // bottom-right
   };
   const translate: Record<"land" | "water" | "kids", number> = {
     land: 247,   // top-right
-    water: 250,    // right-center
+    water: 255,    // right-center
     kids: 242,    // bottom-right
   };
 
   const rotateAngle = {
-    land: -39,
+    land: -45,
     water: 0,
-    kids: 39
+    kids: 47
   }
 
   const translateAngle = {
@@ -48,7 +49,7 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({
     <div className="relative w-[800px] h-full flex items-center justify-center -translate-x-[55%]">
       {/* Outer yellow arc */}
       <div className="absolute w-[500px] h-[500px] rounded-full 
-                      bg-gradient-to-b from-yellow-400 via-yellow-200 to-white"></div>
+                      bg-gradient-to-b from-yellow-300 via-yellow-200 to-white"></div>
 
       {/* Inner dark circle */}
       <div className="absolute w-[340px] h-[340px] rounded-full bg-[#262d4b]"></div>
@@ -56,7 +57,7 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({
         {/* circle */}
         {/* Active highlight circle that follows the tab */}
         <div
-          className="absolute rounded-full border-[8px] border-yellow-300 shadow-xl w-30 h-30 bg-white transition-transform duration-500"
+          className="absolute rounded-full border-[8px] border-[#e6e658] shadow-xl w-33 h-33 bg-white transition-transform duration-500"
           style={{
             transform: `rotate(${rotateAngle[activeCategory] }deg) translate(${Number(translateAngle[activeCategory]) - 44 }px) rotate(${Number(rotateAngle[activeCategory])}deg)`,
           }}
@@ -85,15 +86,15 @@ const CategorySidebar: React.FC<CategorySidebarProps> = ({
                   : "hover:scale-105"
               }`}
             >
-              {categoryIcons[category.key]}
+              <Image src={category.image} alt={category.name} width={70} height={70} className="rounded-full" />
             </div>
 
             {/* Text */}
             <div className="flex flex-col">
-              <h3 className="text-lg font-semibold text-white">
+              <h3 className="text-lg font-thin text-white">
                 {category.name}
               </h3>
-              <span className="text-sm font-medium bg-purple-600 text-white px-3 py-1 rounded-full">
+              <span className="text-xs font-medium bg-[#5151c6] text-white px-4 py-0.5 rounded-full">
                 {category.count} Rides
               </span>
             </div>

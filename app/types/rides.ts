@@ -7,10 +7,12 @@ export interface Ride {
   category: 'land' | 'water' | 'kids';
 }
 
+
 export interface Category {
   key: 'land' | 'water' | 'kids';
   name: string;
   count: number;
+  image: string;
 }
 
 export interface RidesData {
