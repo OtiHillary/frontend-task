@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Map, Camera, Gift } from "lucide-react";
 import Image from "next/image";
 import { Category } from "../types/rides";
